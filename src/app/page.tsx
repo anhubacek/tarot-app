@@ -1,29 +1,33 @@
+import Footer from "@/components/footer"
 import styles from "../styles/home.module.scss"
 
 export default function Home() {
   return (
+    <>
    <main className={styles.container}>
     <h1 className={styles.title}>Tirada de Tarot</h1>
 
     <div>
       <p>Elige una temática</p>
       <div>
-        <button>Amor</button>
-        <button>Salud</button>
-        <button>Finanzas</button>
-        <button>Espiritualidad</button>
-        <button>Trabajo</button>
+        <button className={styles.topic}>Amor</button>
+        <button  className={styles.topic}>Salud</button>
+        <button className={styles.topic}>Finanzas</button>
+        <button className={styles.topic}>Espiritualidad</button>
+        <button className={styles.topic}>Trabajo</button>
       </div>
 
       <p>Tipo de tirada</p>
       <div>
-        <button>Una sola carta</button>
-        <button>Tres cartas</button>
-        <button>Tirada completa</button>
+        <button className={styles.type}>Una sola carta</button>
+        <button className={styles.type}>Tres cartas</button>
+        <button className={styles.type}>Tirada completa</button>
   
       </div>
     </div>
-    <button>Ir a la lectura</button>
-   </main>
+    <button className={styles.action}>Ir a la lectura</button>
+      </main>
+      <Footer></Footer>
+      </>
   )
 }
