@@ -2,6 +2,7 @@
 import Footer from "@/components/footer"
 import { useEffect, useState } from "react"
 import styles from "../../../styles/lecture.module.scss"
+import Link from 'next/link';
 
 export default function Lecture({ params }: { params: { topic: string, type: string } }) {
     const [cards, setCards] = useState<any[]>([])
@@ -38,7 +39,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                             <p  className={styles["card-title"]}>{card.name}</p>
                                 <div className={styles["one-card-container"]}>
                                 
-                            <img className={styles["div-card"]} src={card.image} />
+                            <img className={styles["one-card"]} src={card.image} />
                                     <p className={styles["card-text"]}>{card[params.topic.toLowerCase()]}</p>
                                     
                                 </div>
@@ -78,7 +79,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                     
                 
                 
-                <button className={styles.back}>Volver al inicio</button>
+                <Link href={"/"} className={styles.back}>Volver al inicio</Link>
         </main>
            <Footer></Footer>
            </>

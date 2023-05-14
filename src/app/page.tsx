@@ -3,6 +3,7 @@
 import Footer from "@/components/footer"
 import styles from "../styles/home.module.scss"
 import { useState } from "react"
+import Link from 'next/link';
 
 export default function Home() {
   const [topic, setTopic] = useState<string>()
@@ -15,11 +16,12 @@ export default function Home() {
   const handleType = (e: any) => {
     setType(e.target.value)
   }
+
   console.log(topic)
   return (
     <>
    <main className={styles.container}>
-    <h1 className={styles.title}>Tirada de Tarot</h1>
+    <h1 className={styles.title}>Lectura de Tarot</h1>
 
         <div >
       <p className={styles["option-title"]}>Elige una temática</p>
@@ -43,7 +45,7 @@ export default function Home() {
   
       </div>
     </div>
-    <button className={styles.action} disabled={!type || !topic} >Ir a la lectura</button>
+    <Link href={ !type || !topic ?  "/" : `/${topic}/${type}`} className={ !type || !topic ? styles["action-disabled"] : styles.action}  >Ir a la lectura</Link>
       </main>
       <Footer></Footer>
       </>
