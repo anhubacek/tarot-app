@@ -4,6 +4,12 @@ import Footer from "@/components/footer"
 import styles from "../styles/home.module.scss"
 import { useState } from "react"
 import Link from 'next/link';
+import bg from '../assets/background3.jpg'
+
+const style={
+     backgroundImage: `url(${bg.src})`,
+   
+  }
 
 export default function Home() {
   const [topic, setTopic] = useState<string>()
@@ -20,7 +26,7 @@ export default function Home() {
   console.log(topic)
   return (
     <>
-   <main className={styles.container}>
+   <main className={styles.container} style={style}>
         <h1 className={styles.title}>Lectura de Tarot</h1>
 
         <div >

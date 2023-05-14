@@ -3,6 +3,12 @@ import Footer from "@/components/footer"
 import { useEffect, useState } from "react"
 import styles from "../../../styles/lecture.module.scss"
 import Link from 'next/link';
+import bg from '../../../assets/background3.jpg'
+
+const style={
+    backgroundImage: `url(${bg.src})`,
+   
+  }
 
 export default function Lecture({ params }: { params: { topic: string, type: string } }) {
     const [cards, setCards] = useState<any[]>([])
@@ -11,7 +17,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
         if (params && params.type){
             
             fetch(`https://tarot-api-es.vercel.app/api/v1/random?n=${params.type}`).then(response => response.json()).then((data) => {
-                setTimeout(()=>{ setCards(data.cards)}, 1100)
+                setTimeout(()=>{ setCards(data.cards)}, 800)
             })
         }
     }, [])
@@ -20,7 +26,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
     
     return (
         <>
-        <main className={styles.container}>
+        <main className={styles.container} style={style}>
         <h1 className={styles.title}>Lectura de Tarot</h1>
                 <h2 className={styles.subtitle}>{params.topic.slice(0, 1).toUpperCase() + params.topic.slice(1, 20)}</h2>
                 
@@ -59,8 +65,9 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                             return (
                                 <div className={styles["big-card-container"]}>
                                     <div className={styles["card-container"]}>
-                                    <p  className={styles["card-title"]}>{card.name}</p>
-                                      { params.type === "3" && <img className={styles["div-card"]} src={card.image} />}
+                                  
+                                        {params.type === "3" && <img className={styles["div-card"]} src={card.image} />}
+                                        <p  className={styles["card-title"]}>{card.name}</p>
                                         <p className={styles["card-text"]}>{card[params.topic.toLowerCase()]}</p>
                                         
                                     </div>
