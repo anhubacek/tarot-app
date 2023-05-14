@@ -5,25 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node_modules/next/dist/bin/next start -p $PORT",
+    "start": "next start",
     "lint": "next lint"
   
-  },
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@now/next"
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/pages/$1" }
-  ],
-  "build": {
-    "env": {
-      "NPM_TOKEN": "@npm_token",
-      "API_URL": "@api_url",
-      "IS_NOW": "true"
-    }
   },
   "dependencies": {
     "@types/node": "20.1.4",
