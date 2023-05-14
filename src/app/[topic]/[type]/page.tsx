@@ -11,7 +11,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
         if (params && params.type){
             
             fetch(`https://tarot-api-es.vercel.app/api/v1/random?n=${params.type}`).then(response => response.json()).then((data) => {
-                setTimeout(()=>{ setCards(data.cards)}, 900)
+                setTimeout(()=>{ setCards(data.cards)}, 1100)
             })
         }
     }, [])
