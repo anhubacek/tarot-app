@@ -14,22 +14,40 @@
 .topic{
     margin: 10px;
     padding: 8px 16px;
-    border-radius: 10px;
-    background-color: antiquewhite;
+    border-radius: 20px;
+    background-color: rgb(223, 108, 255);
+    color: white;
+}
+.topic-selected{
+    margin: 10px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgb(163, 58, 233);
+    color: white;
 }
 
 .type{
     margin: 10px;
     padding: 8px 16px;
-    border-radius: 10px;
-    background-color: rgb(241, 170, 243);
+    border-radius: 20px;
+    background-color: rgb(99, 197, 250);
+    color: white;
+}
+.type-selected{
+    margin: 10px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgb(62, 163, 235);
+    color: white;
 }
 
 .action{
     margin: 10px;
-    padding: 8px 16px;
-    border-radius: 10px;
-    background-color: rgb(170, 175, 243);
+    padding: 10px 18px;
+    border-radius: 12px;
+    background-color: rgb(166, 32, 255);
+    color: white;
+    font-size: 18px;
 }
 
 

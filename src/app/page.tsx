@@ -21,7 +21,7 @@ export default function Home() {
       <div>
         <button className={styles.type}>Una sola carta</button>
         <button className={styles.type}>Tres cartas</button>
-        <button className={styles.type}>Tirada completa</button>
+        {/* <button className={styles.type}>Tirada completa</button> */}
   
       </div>
     </div>
