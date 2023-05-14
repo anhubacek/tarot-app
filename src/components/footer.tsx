@@ -1,5 +1,5 @@
 
-import { url } from "inspector"
+
 import styles from "../styles/footer.module.scss"
 import linkedin from "../assets/linkedin.png"
 import site from "../assets/sitio-web.png"
