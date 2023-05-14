@@ -60,7 +60,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                     </div>}
                 {params.type !== "1" &&
                     <div>
-                        {cards?.map((card: { image: string, name: string}) => {
+                        {cards?.map((card:any) => {
                     
                             return (
                                 <div className={styles["big-card-container"]} key={card.name}>
