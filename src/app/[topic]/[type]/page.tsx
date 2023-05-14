@@ -10,27 +10,21 @@ export default function Lecture({ params }: { params: { topic: string, type: str
     useEffect(() => {
         if (params && params.type){
             
-            fetch(`https://tarot-api-es.vercel.app/api/v1/random?n=${params.type}`).then(response => response.json()).then((data)=> setCards(data.cards))
+            fetch(`https://tarot-api-es.vercel.app/api/v1/random?n=${params.type}`).then(response => response.json()).then((data) => {
+                setTimeout(()=>{ setCards(data.cards)}, 900)
+            })
         }
     }, [])
 
-    const titles : any = {
-        1: "Pasado remoto",
-        2: "Pasado reciente",
-        3: "Influencias actuales",
-        4: "Obstáculos actuales",
-        5: "Situación actual",
-        6: "Influencias futuras",
-        7: "Resultado final"
-    }
-    let initializer : number = 0
+
     
     return (
         <>
         <main className={styles.container}>
         <h1 className={styles.title}>Lectura de Tarot</h1>
-        <h2 className={styles.subtitle}>{params.topic.slice(0,1).toUpperCase() +params.topic.slice(1,20) }</h2>
-
+                <h2 className={styles.subtitle}>{params.topic.slice(0, 1).toUpperCase() + params.topic.slice(1, 20)}</h2>
+                
+        {cards.length ? <>
                 {params.type === "1" &&
                       cards?.map((card: { image: string, name: string}) => {
                     
@@ -76,10 +70,15 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                         })}
                     </div>}
 
-                    
-                
-                
                 <Link href={"/"} className={styles.back}>Volver al inicio</Link>
+                </>
+                    :
+                    <div className={styles["loader-container"]}>
+                        <div className={styles.loader}></div>
+                        <div className={styles.loader}></div>
+                        <div className={styles.loader}></div>
+              </div>
+              }
         </main>
            <Footer></Footer>
            </>

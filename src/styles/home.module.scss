@@ -90,15 +90,22 @@
 
 
 .option-title{
-    font-size: 20px;
-    margin: 10px;
+    font-size: 18px;
+    margin-left: 0px;
+    margin-top: 10px;
     font-family: 'Comic Neue', cursive;
 }
 
 
 @media screen and (max-width: 700px) {
     .title{
-        font-size: 30px;
+        font-size: 40px;
         text-align: center
+    }
+    .option-title{
+        font-size: 18px;
+        margin-left: 20px;
+        margin-top: 10px;
+        font-family: 'Comic Neue', cursive;
     }
 }

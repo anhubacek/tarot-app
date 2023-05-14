@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
    <main className={styles.container}>
-    <h1 className={styles.title}>Lectura de Tarot</h1>
+        <h1 className={styles.title}>Lectura de Tarot</h1>
 
         <div >
       <p className={styles["option-title"]}>Elige una temática</p>
