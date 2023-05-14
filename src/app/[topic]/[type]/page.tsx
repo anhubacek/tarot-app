@@ -20,7 +20,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                 setTimeout(()=>{ setCards(data.cards)}, 800)
             })
         }
-    }, [])
+    }, [params])
 
 
     
@@ -35,11 +35,11 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                       cards?.map((card: { image: string, name: string}) => {
                     
                         return (
-                            <div className={styles["big-card-container"]}>
+                            <div className={styles["big-card-container"]} key={card.name}>
                             <p  className={styles["card-title"]}>{card.name}</p>
                                 <div className={styles["one-card-container"]}>
                                 
-                            <img className={styles["one-card"]} src={card.image} />
+                            <img className={styles["one-card"]} src={card.image} alt="image"/>
                                     <p className={styles["card-text"]}>{card[params.topic.toLowerCase()]}</p>
                                     
                                 </div>
@@ -53,7 +53,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                    { params.type !== "1" && <div className={styles["cards-container"]}>
                         {cards?.map((card: { image: string }) => {
                             return (
-                                <img className={styles["top-card"]}  src={card.image} />
+                                <img className={styles["top-card"]}  src={card.image} alt="image" key={card.image}/>
                             )
                         })}
 
@@ -63,7 +63,7 @@ export default function Lecture({ params }: { params: { topic: string, type: str
                         {cards?.map((card: { image: string, name: string}) => {
                     
                             return (
-                                <div className={styles["big-card-container"]}>
+                                <div className={styles["big-card-container"]} key={card.name}>
                                     <div className={styles["card-container"]}>
                                   
                                         {params.type === "3" && <img className={styles["div-card"]} src={card.image} />}
