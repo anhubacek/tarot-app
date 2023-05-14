@@ -22,7 +22,7 @@
     margin: 10px;
     padding: 8px 16px;
     border-radius: 20px;
-    background-color: rgb(163, 58, 233);
+    background-color: rgb(161, 46, 238);
     color: white;
 }
 
@@ -37,17 +37,38 @@
     margin: 10px;
     padding: 8px 16px;
     border-radius: 20px;
-    background-color: rgb(62, 163, 235);
+    background-color: rgb(51, 166, 248);
     color: white;
 }
 
 .action{
-    margin: 10px;
+    margin-top: 30px;
     padding: 10px 18px;
-    border-radius: 12px;
-    background-color: rgb(166, 32, 255);
+    border-radius: 14px;
+    background-color: rgb(228, 13, 247);
     color: white;
     font-size: 18px;
+    transition: 0.5s;
+}
+.action:hover{
+    background-color: rgb(236, 95, 249);
+}
+.action:disabled, .action:disabled:hover{
+    margin-top: 30px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    background-color: rgb(234, 212, 248);
+    cursor: not-allowed;
+    color: white;
+    font-size: 18px;
+    // display: none;
+}
+
+
+
+.option-title{
+    font-size: 20px;
+    margin: 10px
 }
 
 
